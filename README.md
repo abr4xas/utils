@@ -25,7 +25,7 @@ In `SomeController` like this:
 
 namespace SomeNameSpace;
 
-use Abr4xas\Utils;
+use Abr4xas\Utils\SeoUrl;
 
 class SomeController
 {
