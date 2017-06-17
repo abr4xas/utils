@@ -1,6 +1,6 @@
 {
-    "name": "abr4xas/twig-slug",
-    "description": "Pequeña extensión para Twig para generar slug",
+    "name": "abr4xas/utils",
+    "description": "Paquetes de uso personal",
     "type": "library",
     "license": "MIT",
     "authors": [
