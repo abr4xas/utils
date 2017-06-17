@@ -1,0 +1,19 @@
+{
+    "name": "abr4xas/twig-slug",
+    "description": "Pequeña extensión para Twig para generar slug",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "abr4xas",
+            "email": "me@abr4xas.org"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Abr4xas\\SeoUrl\\": "src/"
+        }
+    }
+}
