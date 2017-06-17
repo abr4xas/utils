@@ -20,11 +20,12 @@ $ composer dumpautoload -o // optional
 In `SomeController` like this:
 
 ```php
+
 <?php
 
 namespace SomeNameSpace;
 
-use SeoUrl\SeoUrl;
+use Abr4xas\Utils;
 
 class SomeController
 {
