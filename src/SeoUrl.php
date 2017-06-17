@@ -26,7 +26,7 @@
  * @copyright 2017 Angel Cruz
  */
 
-namespace Abr4xas\SeoUrl;
+namespace Abr4xas\Utils;
 
 class SeoUrl
 {

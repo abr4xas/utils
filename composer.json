@@ -13,7 +13,7 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "Abr4xas\\SeoUrl\\": "src/"
+            "Abr4xas\\Utils\\": "src/"
         }
     }
 }
