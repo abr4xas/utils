@@ -15,26 +15,13 @@ $ composer update
 $ composer dumpautoload -o // optional
 ```
 
-### usage
+### components
 
-In `SomeController` like this:
 
 ```php
-
-<?php
-
-namespace SomeNameSpace;
-
 use Abr4xas\Utils\SeoUrl;
+use Abr4xas\Utils\Hash;
+use Abr4xas\Utils\Debug;
+use Abr4xas\Utils\Money;
 
-class SomeController
-{
-    public function someFunction()
-    {
-        $str = 'This is an awesome string';
-
-        $seoUrl = SeoUrl::generateSlug($str); // output: this-is-an-awesome-string
-
-    }
-}
 ```
