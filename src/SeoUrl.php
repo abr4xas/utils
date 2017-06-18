@@ -45,6 +45,6 @@ class SeoUrl
 	public static function generateSlug($str)
     {
 	    return strtolower(preg_replace(
-	        ['/[^a-zA-Z0-9 -]/', '/[ -]+/', '/^-|-$/','/[«»""!?,.]+/'], ['', '-', ''], SeoUrl::removeAccent($str)));
+	        ['/[^a-zA-Z0-9 -]/', '/[ -]+/', '/^-|-$/','/[«»""!?,.]+/'], ['', '-', ''], self::removeAccent($str)));
 	}
 }
