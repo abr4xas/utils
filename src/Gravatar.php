@@ -36,9 +36,6 @@ class Gravatar
     /**
     * Returns the user's gravatar url.
     * @param string $email The email address
-    * @param string $imageset Default imageset to use [ 404 | mm | identicon | monsterid | wavatar ]
-    * @param string $rating Maximum rating (inclusive) [ g | pg | r | x ]
-    * @param boole $img True to return a complete IMG tag False for just the URL
     * @param array $options Optional, additional key/value attributes to include
     * @return string Link to the user's gravatar image.
     */

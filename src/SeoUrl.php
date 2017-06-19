@@ -30,7 +30,12 @@ namespace Abr4xas\Utils;
 
 class SeoUrl
 {
-
+    /**
+    * Remove Accent
+    * 
+    * @param string $str
+    * @return string
+    */
     public static function removeAccent($str)
     {
         $first = [
@@ -42,6 +47,12 @@ class SeoUrl
         return str_replace($first, $second, $str);
     }
 
+    /**
+    * Generate Slug
+    * 
+    * @param string $str
+    * @return string
+    */
     public static function generateSlug($str)
     {
         return strtolower(preg_replace(
