@@ -19,4 +19,38 @@ use Abr4xas\Utils\SeoUrl;
 use Abr4xas\Utils\Hash;
 use Abr4xas\Utils\Debug;
 use Abr4xas\Utils\Money;
+use Abr4xas\Utils\Gravatar;
+```
+
+### how to use
+
+```php
+
+<?php
+
+require 'vendor/autoload.php';
+
+use Abr4xas\Utils\SeoUrl;
+
+SeoUrl::generateSlug('this is an awesome string');
+
+
+use Abr4xas\Utils\Hash;
+// read the docs :smile:
+
+use Abr4xas\Utils\Debug;
+
+Debug::dieDump($var);
+
+use Abr4xas\Utils\Money;
+
+Money::generaFormato(200, 'USD$');
+Money::generaFormato(200, 'USD$', 5); // 5 decimals
+
+Money::quitarFormato('USD$ 200', 'USD$');
+
+use Abr4xas\Utils\Gravatar;
+
+Gravatar::getAvatarUrl('email@domain.tld', ['s'=> 80, 'd'=>'mm', 'secure' => true]);
+
 ```
