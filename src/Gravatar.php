@@ -34,11 +34,11 @@ class Gravatar
     const HTTPS_URL = 'https://secure.gravatar.com/avatar/';
 
     /**
-    * Returns the user's gravatar url.
-    * @param string $email The email address
-    * @param array $options Optional, additional key/value attributes to include
-    * @return string Link to the user's gravatar image.
-    */
+     * Returns the user's gravatar url.
+     * @param string $email The email address
+     * @param array $options Optional, additional key/value attributes to include
+     * @return string Link to the user's gravatar image.
+     */
     public static function getAvatarUrl($email, $options = [])
     {
         $size       = isset($options['s']) ? $options['s'] : 80;
