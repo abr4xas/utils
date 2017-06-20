@@ -35,18 +35,21 @@ class Money
      * Genera el formato de moneda
      *
      * @param  float $valor monto a transformar
-     * @param  string $simbolo símbolo a mostrar por defecto BsF
-     * @param  int $decimal cantidad de decimales a mostrar por defecto dos
+     * @param array $options additional key/value attributes to include
      * @return string valor formateado según $simbolo y $decimal
      * @throws Exception
      */
 
-    public static function generaFormato($valor = 0, $simbolo = 'BsF', $decimal = 2)
+    public static function generaFormato($valor = 0,  $options = [])
     {
+
+        $simbolo  = isset($options['s']) ? $options['s'] : 'BsF';
+        $decimal  = isset($options['d']) ? $options['d'] : 2;  
+        
         if (!is_numeric($valor))
             throw new Exception("{$valor} debe indicar un número que sea válido");
         if (!is_int($decimal))
-            throw new Exception("El valor {$decimal} no es válido");
+            throw new Exception("El valor {$decimal} no es válido");          
 
         return $simbolo . ' ' . number_format($valor, $decimal, '.', '');
     }
@@ -54,11 +57,14 @@ class Money
      * Retira el formato generado de moneda
      *
      * @param  string $str monto a transformar
-     * @param  string $simbolo
+     * @param array $options additional key/value attributes to include
      * @return float
      */
-    public static function quitarFormato($str, $simbolo = 'BsF')
+    public static function quitarFormato($str, $options = [])
     {
-        return floatval(str_replace('.', '', str_replace($simbolo, '', $str)));
+        $simbolo  = isset($options['s']) ? $options['s'] : 'BsF';
+        $decimal  = isset($options['d']) ? $options['d'] : 2;
+        
+        return number_format(str_replace($simbolo, '', $str), $decimal, '.', '');
     }
 }
