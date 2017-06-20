@@ -44,10 +44,11 @@ Debug::dieDump($var);
 
 use Abr4xas\Utils\Money;
 
-Money::generaFormato(200, 'USD$');
-Money::generaFormato(200, 'USD$', 5); // 5 decimals
+Money::generaFormato(200, ['s' => 'USD$']); // USD$ 200.00
+Money::generaFormato(200, ['s' => 'USD$', 'd' => 4]); // USD$ 200.0000
 
-Money::quitarFormato('USD$ 200', 'USD$');
+Money::quitarFormato('USD$ 200',  ['s' => 'USD$']); // 200.00
+Money::quitarFormato('USD$ 200',  ['s' => 'USD$', 'd' => 4]); // 200.0000
 
 use Abr4xas\Utils\Gravatar;
 
