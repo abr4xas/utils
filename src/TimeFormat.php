@@ -30,28 +30,28 @@ namespace Abr4xas\Utils;
 
 
 class TimeFormat
-{    
-   /**
-    * TimeFormat
-    * 
-    * @param string $date
-    * @return string
-    */
+{
+    /**
+     * TimeFormat
+     *
+     * @param string $date
+     * @return string
+     */
     public static function timeAgo($date) {
 
         $time_og    = strtotime($date);
         $units      = [
-            'second', 
-            'minute', 
-            'hour', 
-            'day', 
-            'week', 
-            'month', 
-            'year', 
+            'second',
+            'minute',
+            'hour',
+            'day',
+            'week',
+            'month',
+            'year',
             'decade',
         ];
 
-        $intervals  = [
+        $intervals = [
             '60',
             '60',
             '24',
@@ -65,17 +65,17 @@ class TimeFormat
 
         $difference = $now - $time_og;
 
-        for($j = 0; $difference >= $intervals[$j] && $j < count($intervals)-1; $j++) {
-            $difference /= $intervals[$j];
+        for ($j = 0; $difference >= $intervals[ $j ] && $j < count($intervals) - 1; $j++) {
+            $difference /= $intervals[ $j ];
         }
 
         $difference = round($difference);
 
-        if($difference != 1) {
-            $units[$j].= 's';
+        if ($difference != 1) {
+            $units[ $j ] .= 's';
         }
 
-        $ago = $difference .''. $units[$j] .'ago';
+        $ago = $difference . '' . $units[ $j ] . 'ago';
 
         return $ago;
     }
