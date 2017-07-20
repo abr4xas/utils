@@ -31,11 +31,11 @@ namespace Abr4xas\Utils;
 class SeoUrl
 {
     /**
-    * Remove Accent
-    * 
-    * @param string $str
-    * @return string
-    */
+     * Remove Accent
+     * 
+     * @param string $str
+     * @return string
+     */
     public static function removeAccent($str)
     {
         $first = [
@@ -48,11 +48,11 @@ class SeoUrl
     }
 
     /**
-    * Generate Slug
-    * 
-    * @param string $str
-    * @return string
-    */
+     * Generate Slug
+     * 
+     * @param string $str
+     * @return string
+     */
     public static function generateSlug($str)
     {
         return strtolower(preg_replace(
