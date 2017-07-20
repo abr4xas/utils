@@ -20,6 +20,7 @@ use Abr4xas\Utils\Hash;
 use Abr4xas\Utils\Debug;
 use Abr4xas\Utils\Money;
 use Abr4xas\Utils\Gravatar;
+use Abr4xas\Utils\TimeFormat;
 ```
 
 ### how to use
@@ -52,5 +53,9 @@ Money::quitarFormato('USD$ 200', 'USD$');
 use Abr4xas\Utils\Gravatar;
 
 Gravatar::getAvatarUrl('email@domain.tld', ['s'=> 80, 'd'=>'mm', 'secure' => true]);
+
+use Abr4xas\Utils\TimeFormat;
+
+TimeFormat::timeAgo('2017-07-11'); 
 
 ```
