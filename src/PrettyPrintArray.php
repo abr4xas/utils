@@ -38,6 +38,6 @@ class PrettyPrintArray
      */
     public static function prettyPrintArray($str)
     {
-        return print('<pre>'.print_r($str,true).'</pre>');
+        return print('<pre>' . print_r($str, true) . '</pre>');
     }
 }

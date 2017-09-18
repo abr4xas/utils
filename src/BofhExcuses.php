@@ -33,11 +33,11 @@ class BofhExcuses
     const HTTP_URL = 'http://bofhcalendar.com/api.php';    
 
     /**
-    * Retorna una excusa bofh
-    * @return string Retorna una excusa bofh
-    */
+     * Retorna una excusa bofh
+     * @return string Retorna una excusa bofh
+     */
     public static function bofhExcuses()
     {         
-         return file_get_contents(self::HTTP_URL);
+            return file_get_contents(self::HTTP_URL);
     } 
 }
