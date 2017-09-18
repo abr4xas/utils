@@ -27,44 +27,17 @@
  */
 
 namespace Abr4xas\Utils;
-use Exception;
 
-class Money
+class PrettyPrintArray
 {
     /**
-     * Genera el formato de moneda
-     *
-     * @param  float $valor monto a transformar
-     * @param array $options additional key/value attributes to include
-     * @return string valor formateado según $simbolo y $decimal
-     * @throws Exception
+     * Pretty Print Array
+     * 
+     * @param string $str
+     * @return Array
      */
-
-    public static function generaFormato($valor = 0,  $options = [])
+    public static function prettyPrintArray($str)
     {
-
-        $simbolo  = isset($options['s']) ? $options['s'] : 'BsF';
-        $decimal  = isset($options['d']) ? $options['d'] : 2;  
-        
-        if (!is_numeric($valor))
-            throw new Exception("{$valor} debe indicar un número que sea válido");
-        if (!is_int($decimal))
-            throw new Exception("El valor {$decimal} no es válido");          
-
-        return $simbolo . ' ' . number_format($valor, $decimal, '.', '');
-    }
-    /**
-     * Retira el formato generado de moneda
-     *
-     * @param  string $str monto a transformar
-     * @param array $options additional key/value attributes to include
-     * @return float
-     */
-    public static function quitarFormato($str, $options = [])
-    {
-        $simbolo  = isset($options['s']) ? $options['s'] : 'BsF';
-        $decimal  = isset($options['d']) ? $options['d'] : 2;
-        
-        return number_format(str_replace($simbolo, '', $str), $decimal, '.', '');
+        return print('<pre>'.print_r($str,true).'</pre>');
     }
 }

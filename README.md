@@ -6,21 +6,30 @@
 
 ### how to install
 
+Add this to your `composer.json`
+
+```json
+"require": {
+    "abr4xas/utils": "dev-master"
+}
+```
+
+Then:
+
 ```bash
-$ composer require abr4xas/utils
+$ composer update
 $ composer dumpautoload -o // optional
 ```
 
 ### components
 
-
 ```php
-use Abr4xas\Utils\SeoUrl;
 use Abr4xas\Utils\Hash;
-use Abr4xas\Utils\Debug;
-use Abr4xas\Utils\Money;
+use Abr4xas\Utils\SeoUrl;
 use Abr4xas\Utils\Gravatar;
 use Abr4xas\Utils\TimeFormat;
+use Abr4xas\Utils\OpenWeatherMap;
+use Abr4xas\Utils\PrettyPrintArray;
 ```
 
 ### how to use
@@ -31,32 +40,22 @@ use Abr4xas\Utils\TimeFormat;
 
 require 'vendor/autoload.php';
 
-use Abr4xas\Utils\SeoUrl;
-
-SeoUrl::generateSlug('this is an awesome string');
-
-
 use Abr4xas\Utils\Hash;
 // read the docs :smile:
 
-use Abr4xas\Utils\Debug;
-
-Debug::dieDump($var);
-
-use Abr4xas\Utils\Money;
-
-Money::generaFormato(200, ['s' => 'USD$']); // USD$ 200.00
-Money::generaFormato(200, ['s' => 'USD$', 'd' => 4]); // USD$ 200.0000
-
-Money::quitarFormato('USD$ 200',  ['s' => 'USD$']); // 200.00
-Money::quitarFormato('USD$ 200',  ['s' => 'USD$', 'd' => 4]); // 200.0000
+use Abr4xas\Utils\SeoUrl;
+SeoUrl::generateSlug('this is an awesome string');
 
 use Abr4xas\Utils\Gravatar;
-
 Gravatar::getAvatarUrl('email@domain.tld', ['s'=> 80, 'd'=>'mm', 'secure' => true]);
 
 use Abr4xas\Utils\TimeFormat;
-
 TimeFormat::timeAgo('2017-07-11'); 
+
+use Abr4xas\Utils\OpenWeatherMap;
+OpenWeatherMap::openWeatherMap('city','api key');
+
+use Abr4xas\Utils\PrettyPrintArray;
+PrettyPrintArray::prettyPrintArray($var);
 
 ```

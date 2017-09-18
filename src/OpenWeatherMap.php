@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The MIT License (MIT)
  * Copyright (c) 2017 Angel Cruz <me@abr4xas.org>
@@ -28,56 +29,18 @@
 
 namespace Abr4xas\Utils;
 
-
-class TimeFormat
+class OpenWeatherMap
 {
+    const HTTPS_URL = 'https://api.openweathermap.org/data/2.5/weather?q=';
+
     /**
-     * TimeFormat
-     *
-     * @param string $date
-     * @return string
+     * Retorna areglo con las caracteristicas del clima
+     * @param string $city
+     * @param string $api
+     * @return array Retorna areglo con las caracteristicas del clima
      */
-    public static function timeAgo($date) {
-
-        $time_og    = strtotime($date);
-
-        $units      = [
-            'second',
-            'minute',
-            'hour',
-            'day',
-            'week',
-            'month',
-            'year',
-            'decade',
-        ];
-
-        $intervals = [
-            '60',
-            '60',
-            '24',
-            '7',
-            '4.35',
-            '12',
-            '10',
-        ];
-
-        $now = time();
-
-        $difference = $now - $time_og;
-
-        for ($j = 0; $difference >= $intervals[ $j ] && $j < count($intervals) - 1; $j++) {
-            $difference /= $intervals[ $j ];
-        }
-
-        $difference = round($difference);
-
-        if ($difference != 1) {
-            $units[ $j ] .= 's';
-        }
-
-        $ago = $difference . '' . $units[ $j ] . 'ago';
-
-        return $ago;
-    }
+    public static function openWeatherMap($city, $api)
+    {
+        return json_decode(file_get_contents(self::HTTPS_URL .''. $city .'&appid='. $api .'&units=metric'));
+    } 
 }

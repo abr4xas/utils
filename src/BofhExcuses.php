@@ -28,12 +28,16 @@
 
 namespace Abr4xas\Utils;
 
-class Debug
+class BofhExcuses
 {
-    public static function dieDump()
-    {
-        array_map(function($str) { print("<script src=\"https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shCore.min.js\"></script><script src=\"https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushPhp.min.js\"></script><link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shCoreFadeToGrey.min.css\" /><pre class=\"brush: php\">" . print_r($str, true) . "</pre><script>SyntaxHighlighter.all()</script>"); }, func_get_args());
-        die;
-    }
-}
+    const HTTP_URL = 'http://bofhcalendar.com/api.php';    
 
+    /**
+    * Retorna una excusa bofh
+    * @return string Retorna una excusa bofh
+    */
+    public static function bofhExcuses()
+    {         
+         return file_get_contents(self::HTTP_URL);
+    } 
+}
