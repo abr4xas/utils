@@ -76,7 +76,7 @@ class TimeFormat
             $units[ $j ] .= 's';
         }
 
-        $ago = $difference . '' . $units[ $j ] . 'ago';
+        $ago = $difference . ' ' . $units[ $j ] . ' ago';
 
         return $ago;
     }
