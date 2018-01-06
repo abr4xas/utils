@@ -28,16 +28,27 @@
 
 namespace Abr4xas\Utils;
 
-class PrettyPrintArray
-{
+class UploadsIm {
+
     /**
-     * Pretty Print Array
-     * 
-     * @param string $param
-     * @return Array
+     * Subida de imagenes
+     *
+     * @param $param string nombre de la imagen+ext
+     * @param $fileType string tipo de imagen por defecto `image/jpeg`
+     *
+     * @return array resultados de la transaccion
      */
-    public static function prettyPrintArray($param)
-    {
-        return print('<pre>' . print_r($param, true) . '</pre>');
+    public static function uploadImages($param, $fileType = 'image/jpeg')
+    { 
+        $curlSession = curl_init();
+        curl_setopt($curlSession, CURLOPT_URL, 'http://uploads.im/api?upload');
+        curl_setopt($curlSession, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($curlSession, CURLOPT_POST, true);
+        curl_setopt($curlSession, CURLOPT_HTTPHEADER, ['Content-Type:multipart/form-data']);
+        curl_setopt($curlSession, CURLOPT_POSTFIELDS, ['file' => curl_file_create($param, $fileType, $param)]);
+        $jsonData = json_decode(curl_exec($curlSession), true);
+        curl_close($curlSession);
+        
+        return $jsonData;       
     }
 }

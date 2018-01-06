@@ -27,6 +27,7 @@ $ composer dumpautoload -o // optional
 use Abr4xas\Utils\Hash;
 use Abr4xas\Utils\SeoUrl;
 use Abr4xas\Utils\Gravatar;
+use Abr4xas\Utils\UploadsIm;
 use Abr4xas\Utils\TimeFormat;
 use Abr4xas\Utils\OpenWeatherMap;
 use Abr4xas\Utils\PrettyPrintArray;
@@ -48,6 +49,9 @@ SeoUrl::generateSlug('this is an awesome string');
 
 use Abr4xas\Utils\Gravatar;
 Gravatar::getAvatarUrl('email@domain.tld', ['s'=> 80, 'd'=>'mm', 'secure' => true]);
+
+use Abr4xas\Utils\UploadsIm;
+UploadsIm::uploadImages('image.jpg', $fileType); // default `$fileType` image/jpeg
 
 use Abr4xas\Utils\TimeFormat;
 TimeFormat::timeAgo('2017-07-11'); 
