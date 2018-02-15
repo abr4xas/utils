@@ -38,6 +38,6 @@ class BofhExcuses
      */
     public static function bofhExcuses()
     {         
-            return file_get_contents(self::HTTP_URL);
+        return file_get_contents(self::HTTP_URL);
     } 
 }
