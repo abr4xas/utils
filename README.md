@@ -29,6 +29,8 @@ use Abr4xas\Utils\SeoUrl;
 use Abr4xas\Utils\Gravatar;
 use Abr4xas\Utils\UploadsIm;
 use Abr4xas\Utils\TimeFormat;
+use Abr4xas\Utils\GoogleShortUrl;
+use Abr4xas\Utils\SuggestKeyword;
 use Abr4xas\Utils\OpenWeatherMap;
 use Abr4xas\Utils\PrettyPrintArray;
 ```
@@ -62,4 +64,27 @@ OpenWeatherMap::openWeatherMap('city','api key');
 use Abr4xas\Utils\PrettyPrintArray;
 PrettyPrintArray::prettyPrintArray($var);
 
+
+use Abr4xas\Utils\SuggestKeyword;
+$keywords = SuggestKeyword::SuggestKeyword('php');
+PrettyPrintArray::prettyPrintArray($keywords);
+
+// Output:
+// Array
+// (
+//     [0] => php
+//     [1] => phpmyadmin
+//     [2] => php date
+//     [3] => phpstorm
+//     [4] => php online
+//     [5] => php array length
+//     [6] => php foreach
+//     [7] => phpunit
+//     [8] => php array
+//     [9] => php try catch
+// )
+
+use Abr4xas\Utils\GoogleShortUrl;
+$url = GoogleShortUrl::shortUrl('https://blog.abr4xas.org/','apiKey');
+// Output: https://goo.gl/83ymQE
 ```
