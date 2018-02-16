@@ -42,7 +42,7 @@ class GoogleShortUrl
     public static function shortUrl($param, $apiKey)
     { 
         $curlSession = curl_init();
-        curl_setopt($curlSession, CURLOPT_URL, 'https://www.googleapis.com/urlshortener/v1/url?key='.$apiKey);
+        curl_setopt($curlSession, CURLOPT_URL, 'https://www.googleapis.com/urlshortener/v1/url?key=' . $apiKey);
         curl_setopt($curlSession, CURLOPT_RETURNTRANSFER, true);
 
         $requestData = [
@@ -50,12 +50,12 @@ class GoogleShortUrl
         ];
 
         curl_setopt($curlSession, CURLOPT_POST, true);
-        curl_setopt($curlSession, CURLOPT_HTTPHEADER, ['Content-type: application/json']);
+        curl_setopt($curlSession, CURLOPT_HTTPHEADER, [ 'Content-type: application/json' ]);
         curl_setopt($curlSession, CURLOPT_POSTFIELDS, json_encode($requestData));
         $jsonData = json_decode(curl_exec($curlSession), true);
         curl_close($curlSession);
         
-        return $jsonData['id'];
+        return $jsonData[ 'id' ];
     }
     
 }

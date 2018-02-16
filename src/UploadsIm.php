@@ -44,8 +44,8 @@ class UploadsIm {
         curl_setopt($curlSession, CURLOPT_URL, 'http://uploads.im/api?upload');
         curl_setopt($curlSession, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($curlSession, CURLOPT_POST, true);
-        curl_setopt($curlSession, CURLOPT_HTTPHEADER, ['Content-Type:multipart/form-data']);
-        curl_setopt($curlSession, CURLOPT_POSTFIELDS, ['file' => curl_file_create($param, $fileType, $param)]);
+        curl_setopt($curlSession, CURLOPT_HTTPHEADER, [ 'Content-Type:multipart/form-data' ]);
+        curl_setopt($curlSession, CURLOPT_POSTFIELDS, [ 'file' => curl_file_create($param, $fileType, $param) ]);
         $jsonData = json_decode(curl_exec($curlSession), true);
         curl_close($curlSession);
         
