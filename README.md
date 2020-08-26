@@ -10,12 +10,8 @@ Un simple composer package que puede servir de utilidad a cualquiera con muchas 
 
 ### how to install
 
-Add this to your `composer.json`
-
-```json
-"require": {
-    "abr4xas/utils": "dev-master"
-}
+```bash
+composer require abr4xas/utils
 ```
 
 Then:
