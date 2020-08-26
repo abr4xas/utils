@@ -24,14 +24,10 @@ $ composer dumpautoload -o // optional
 ### components
 
 ```php
-use Abr4xas\Utils\Hash;
 use Abr4xas\Utils\SeoUrl;
 use Abr4xas\Utils\Gravatar;
-use Abr4xas\Utils\UploadsIm;
 use Abr4xas\Utils\TimeFormat;
-use Abr4xas\Utils\GoogleShortUrl;
 use Abr4xas\Utils\SuggestKeyword;
-use Abr4xas\Utils\OpenWeatherMap;
 use Abr4xas\Utils\PrettyPrintArray;
 ```
 
