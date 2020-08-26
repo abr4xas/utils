@@ -40,15 +40,15 @@ class SuggestKeyword
      * @return array resultado de la transaccion
      */
     public static function SuggestKeyword($param)
-    { 
+    {
         $curlSession = curl_init();
-        curl_setopt($curlSession, CURLOPT_URL, 'https://suggestqueries.google.com/complete/search?output=firefox&client=firefox&hl=en-US&q=' . $param);
+        curl_setopt($curlSession, CURLOPT_URL, "https://suggestqueries.google.com/complete/search?output=firefox&client=firefox&hl=en-US&q={$param}");
         curl_setopt($curlSession, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($curlSession, CURLOPT_HTTPHEADER, [ 'Content-type: application/json' ]);
         $jsonData = json_decode(curl_exec($curlSession), true);
         curl_close($curlSession);
-        
+
         return $jsonData[ 1 ];
     }
-    
+
 }

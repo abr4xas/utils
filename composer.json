@@ -1,26 +1,30 @@
 {
-    "name": "abr4xas/utils",
-    "description": "Personal Package",
-    "type": "library",
-    "license": "MIT",
-    "authors": [{
-        "name": "abr4xas",
-        "email": "me@abr4xas.org",
-        "homepage": "https://abr4xas.org/",
-        "role": "Developer"
-    }],
-    "require": {},
-    "autoload": {
-        "psr-4": {
-            "Abr4xas\\Utils\\": "src/"
-        }
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.0-dev"
-        }
-    },
-    "config": {
-        "sort-packages": true
-    }
+	"name": "abr4xas/utils",
+	"description": "Personal Package",
+	"type": "library",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "angel cruz",
+			"email": "bullgram@gmail.com",
+			"homepage": "https://angelcruz.dev",
+			"role": "Developer"
+		}
+	],
+	"require": {},
+	"autoload": {
+		"psr-4": {
+			"Abr4xas\\Utils\\": "src/"
+		}
+	},
+	"extra": {
+		"branch-alias": {
+			"dev-master": "1.0-dev"
+		}
+	},
+	"config": {
+		"sort-packages": true
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true
 }
