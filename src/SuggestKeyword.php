@@ -30,16 +30,15 @@ namespace Abr4xas\Utils;
 
 class SuggestKeyword
 {
-
     /**
-     * Generar URL
+     * Undocumented function
      *
-     * @param $param url
-     * @param $apiKey string llave api de Google
+     * @param string $param
+     * @return array
      *
-     * @return array resultado de la transaccion
+     * @psalm-suppress InvalidScalarArgument
      */
-    public static function SuggestKeyword($param)
+    public static function SuggestKeyword(string $param): array
     {
         $curlSession = curl_init();
         curl_setopt($curlSession, CURLOPT_URL, "https://suggestqueries.google.com/complete/search?output=firefox&client=firefox&hl=en-US&q={$param}");
@@ -50,5 +49,4 @@ class SuggestKeyword
 
         return $jsonData[ 1 ];
     }
-
 }

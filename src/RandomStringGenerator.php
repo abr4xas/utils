@@ -11,85 +11,91 @@ namespace Abr4xas\Utils;
  */
 class RandomStringGenerator
 {
-	/** @var string */
-	protected $alphabet;
+    /** @var string */
+    protected $alphabet;
 
-	/** @var int */
-	protected $alphabetLength;
+    /** @var int */
+    protected $alphabetLength;
 
-	/**
-	 * @param string $alphabet
-	 */
-	public function __construct($alphabet = '')
-	{
-		if ('' !== $alphabet) {
-			$this->setAlphabet($alphabet);
-		} else {
-			$this->setAlphabet(
-				implode(range('a', 'z'))
-					. implode(range('A', 'Z'))
-					. implode(range(0, 9))
-			);
-		}
-	}
+    /**
+     * @param string $alphabet
+     */
+    public function __construct($alphabet = '')
+    {
+        if ('' !== $alphabet) {
+            $this->setAlphabet($alphabet);
+        } else {
+            $this->setAlphabet(
+                implode(range('a', 'z'))
+                    . implode(range('A', 'Z'))
+                    . implode(range(0, 9))
+            );
+        }
+    }
 
-	/**
-	 * @param string $alphabet
-	 */
-	public function setAlphabet($alphabet)
-	{
-		$this->alphabet = $alphabet;
-		$this->alphabetLength = strlen($alphabet);
-	}
+    /**
+     * @param string $alphabet
+     *
+     * @return self
+     */
+    public function setAlphabet($alphabet): self
+    {
+        $this->alphabet = $alphabet;
+        $this->alphabetLength = strlen($alphabet);
 
-	/**
-	 * @param int $length
-	 * @return string
-	 */
-	public function generate($length)
-	{
-		$token = '';
+        return $this;
+    }
 
-		for ($i = 0; $i < $length; $i++) {
-			$randomKey = $this->getRandomInteger(0, $this->alphabetLength);
-			$token .= $this->alphabet[$randomKey];
-		}
+    /**
+     * Undocumented function
+     *
+     * @param int $length
+     * @return string
+     */
+    public function generate($length = 10): string
+    {
+        $token = '';
 
-		return $token;
-	}
+        for ($i = 0; $i < $length; $i++) {
+            $randomKey = $this->getRandomInteger(0, $this->alphabetLength);
+            $token .= $this->alphabet[$randomKey];
+        }
 
-	/**
-	 * @param int $min
-	 * @param int $max
-	 * @return int
-	 */
-	protected function getRandomInteger($min, $max)
-	{
-		$range = ($max - $min);
+        return $token;
+    }
 
-		if ($range < 0) {
-			// Not so random...
-			return $min;
-		}
+    /**
+     * @param int $min
+     * @param int $max
+     * @return int
+     */
+    protected function getRandomInteger($min, $max)
+    {
+        $range = ($max - $min);
 
-		$log = log($range, 2);
+        if ($range < 0) {
+            // Not so random...
+            return $min;
+        }
 
-		// Length in bytes.
-		$bytes = (int) ($log / 8) + 1;
+        $log = log($range, 2);
 
-		// Length in bits.
-		$bits = (int) $log + 1;
+        // Length in bytes.
+        $bytes = (int) ($log / 8) + 1;
 
-		// Set all lower bits to 1.
-		$filter = (int) (1 << $bits) - 1;
+        // Length in bits.
+        $bits = (int) $log + 1;
 
-		do {
-			$rnd = hexdec(bin2hex(openssl_random_pseudo_bytes($bytes)));
+        // Set all lower bits to 1.
+        $filter = (int) (1 << $bits) - 1;
 
-			// Discard irrelevant bits.
-			$rnd = $rnd & $filter;
-		} while ($rnd >= $range);
+        do {
+            $rnd = hexdec(bin2hex(openssl_random_pseudo_bytes($bytes)));
 
-		return ($min + $rnd);
-	}
+            // Discard irrelevant bits.
+            $rnd = $rnd & $filter;
+        } while ($rnd >= $range);
+
+        return ($min + $rnd);
+    }
 }

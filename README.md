@@ -1,8 +1,17 @@
-## Utilidades
+<p align="center">
+	<img src="utils.png" width="1028">
+</p>
 
-[![GitHub issues](https://img.shields.io/github/issues/abr4xas/utils.svg?style=flat-square)](https://github.com/abr4xas/utils/issues) [![GitHub forks](https://img.shields.io/github/forks/abr4xas/twig-slug.svg?style=flat-square)](https://github.com/abr4xas/utils/network) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/abr4xas/utils/master/LICENSE)
+# Utils
 
-Un simple composer package que puede servir de utilidad a cualquiera con muchas herramientas que facilitan el desarrollo de proyectos mucho más rápido.
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/abr4xas/utils.svg?style=flat-square)](https://packagist.org/packages/abr4xas/utils)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/abr4xas/utils/Tests?style=flat-square)](https://github.com/abr4xas/utils/actions?query=workflow%3Arun-tests+branch%3Amaster)
+[![Total Downloads](https://img.shields.io/packagist/dt/abr4xas/utils.svg?style=flat-square)](https://packagist.org/packages/abr4xas/utils)
+[![GitHub forks](https://img.shields.io/github/forks/abr4xas/twig-slug.svg?style=flat-square)](https://github.com/abr4xas/utils/network)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/abr4xas/utils/master/LICENSE)
+
+
+Un simple paquete de php que puede servir de utilidad a cualquiera con muchas herramientas que facilitan el desarrollo de proyectos mucho más rápido.
 
 ---
 
@@ -20,17 +29,6 @@ Then:
 $ composer update
 $ composer dumpautoload -o // optional
 ```
-
-### components
-
-```php
-use Abr4xas\Utils\SeoUrl;
-use Abr4xas\Utils\Gravatar;
-use Abr4xas\Utils\TimeFormat;
-use Abr4xas\Utils\SuggestKeyword;
-use Abr4xas\Utils\PrettyPrintArray;
-```
-
 ### how to use
 
 ```php
@@ -86,14 +84,8 @@ PrettyPrintArray::prettyPrintArray($keywords);
 
 use Abr4xas\Utils\RandomStringGenerator;
 
-// create new instance of generator class.
-$generator = new RandomStringGenerator;
+$token = (new RandomStringGenerator)->generate();
 
-// set token length.
-$tokenLength = 10;
-
-// call method to generate random string.
-$token = $generator->generate($tokenLength);
 ```
 
 ### custom alphabet
@@ -103,15 +95,38 @@ $token = $generator->generate($tokenLength);
 
 $customAlphabet = '0123456789ABCDEF';
 
-// set initial alphabet.
-$generator = new RandomStringGenerator($customAlphabet);
+// you can set the custom alphabet from the constructor
+$token = (new RandomStringGenerator($customAlphabet))->generate();
 
-// set token length.
-$tokenLength = 10;
+// or you can set a new alphabet whenever needed like this:
 
-// change alphabet whenever needed.
-$generator->setAlphabet($customAlphabet);
+$token = (new RandomStringGenerator)->setAlphabet($customAlphabet)->generate();
 
-// call method to generate random string.
-$token = $generator->generate($tokenLength);
 ```
+
+## Testing
+
+```bash
+composer test
+```
+
+## Changelog
+
+Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
+
+## Contributing
+
+Please see [CONTRIBUTING](.github/CONTRIBUTING.md) for details.
+
+## Security Vulnerabilities
+
+Please review [our security policy](../../security/policy) on how to report security vulnerabilities.
+
+## Credits
+
+- [angel cruz](https://github.com/abr4xas)
+- [All Contributors](../../contributors)
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.

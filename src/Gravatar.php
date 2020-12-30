@@ -30,7 +30,7 @@ namespace Abr4xas\Utils;
 
 class Gravatar
 {
-    const HTTP_URL  = 'http://www.gravatar.com/avatar/';
+    const HTTP_URL = 'http://www.gravatar.com/avatar/';
     const HTTPS_URL = 'https://secure.gravatar.com/avatar/';
 
     /**
@@ -39,14 +39,13 @@ class Gravatar
      * @param array $options Optional, additional key/value attributes to include
      * @return string Link to the user's gravatar image.
      */
-    public static function getAvatarUrl($email, $options = [])
+    public static function getAvatarUrl($email, $options = []): string
     {
-        $size       = isset($options['s']) ? $options['s'] : 80;
-        $imageset   = isset($options['d']) ? $options['d'] : 'mm';
-        $rating     = isset($options['r']) ? $options['r'] : 'g';
-        $secure     = isset($options['secure']) ? self::HTTPS_URL : self::HTTP_URL;
+        $size = isset($options['s']) ? $options['s'] : 80;
+        $imageset = isset($options['d']) ? $options['d'] : 'mm';
+        $rating = isset($options['r']) ? $options['r'] : 'g';
+        $secure = isset($options['secure']) ? self::HTTPS_URL : self::HTTP_URL;
 
         return $secure . md5(strtolower(trim($email))) . '?s=' . $size .'&d=' . $imageset . '&r=' . $rating;
-    }  
+    }
 }
-

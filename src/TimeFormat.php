@@ -28,7 +28,6 @@
 
 namespace Abr4xas\Utils;
 
-
 class TimeFormat
 {
     /**
@@ -37,11 +36,11 @@ class TimeFormat
      * @param string $date
      * @return string
      */
-    public static function timeAgo($date) {
+    public static function timeAgo($date): string
+    {
+        $time_og = strtotime($date);
 
-        $time_og    = strtotime($date);
-
-        $units      = [
+        $units = [
             'second',
             'minute',
             'hour',

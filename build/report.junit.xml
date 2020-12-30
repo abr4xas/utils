@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="" tests="6" assertions="6" errors="0" warnings="0" failures="0" skipped="0" time="0.123020">
+    <testsuite name="Abr4xas Test Suite" tests="6" assertions="6" errors="0" warnings="0" failures="0" skipped="0" time="0.123020">
+      <testsuite name="Abr4xas\Utils\Tests\UtilsTest" file="/home/angel/html/utils/tests/UtilsTest.php" tests="6" assertions="6" errors="0" warnings="0" failures="0" skipped="0" time="0.123020">
+        <testcase name="test_it_retur_pretty_url" class="Abr4xas\Utils\Tests\UtilsTest" classname="Abr4xas.Utils.Tests.UtilsTest" file="/home/angel/html/utils/tests/UtilsTest.php" line="14" assertions="1" time="0.001791"/>
+        <testcase name="test_it_array_of_key_words" class="Abr4xas\Utils\Tests\UtilsTest" classname="Abr4xas.Utils.Tests.UtilsTest" file="/home/angel/html/utils/tests/UtilsTest.php" line="22" assertions="1" time="0.120001"/>
+        <testcase name="test_it_can_generate_random_string" class="Abr4xas\Utils\Tests\UtilsTest" classname="Abr4xas.Utils.Tests.UtilsTest" file="/home/angel/html/utils/tests/UtilsTest.php" line="30" assertions="1" time="0.000554"/>
+        <testcase name="test_it_can_generate_random_string_with_custom_alphabet" class="Abr4xas\Utils\Tests\UtilsTest" classname="Abr4xas.Utils.Tests.UtilsTest" file="/home/angel/html/utils/tests/UtilsTest.php" line="38" assertions="1" time="0.000241"/>
+        <testcase name="test_it_can_generate_random_string_setting_custom_alphabet" class="Abr4xas\Utils\Tests\UtilsTest" classname="Abr4xas.Utils.Tests.UtilsTest" file="/home/angel/html/utils/tests/UtilsTest.php" line="48" assertions="1" time="0.000210"/>
+        <testcase name="test_it_can_get_gravatar_url" class="Abr4xas\Utils\Tests\UtilsTest" classname="Abr4xas.Utils.Tests.UtilsTest" file="/home/angel/html/utils/tests/UtilsTest.php" line="58" assertions="1" time="0.000223"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testsuites>
