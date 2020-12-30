@@ -32,9 +32,9 @@ class PrettyPrintArray
 {
     /**
      * Pretty Print Array
-     * 
+     *
      * @param string $param
-     * @return Array
+     * @return Array|mixed
      */
     public static function prettyPrintArray($param)
     {

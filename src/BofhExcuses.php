@@ -30,14 +30,10 @@ namespace Abr4xas\Utils;
 
 class BofhExcuses
 {
-    const HTTP_URL = 'http://bofhcalendar.com/api.php';    
+    const HTTP_URL = 'http://bofhcalendar.com/api.php';
 
-    /**
-     * Retorna una excusa bofh
-     * @return string Retorna una excusa bofh
-     */
-    public static function bofhExcuses()
-    {         
+    public static function bofhExcuses(): string
+    {
         return file_get_contents(self::HTTP_URL);
-    } 
+    }
 }

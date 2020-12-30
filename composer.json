@@ -1,30 +1,58 @@
 {
-	"name": "abr4xas/utils",
-	"description": "Personal Package",
-	"type": "library",
-	"license": "MIT",
-	"authors": [
-		{
-			"name": "angel cruz",
-			"email": "bullgram@gmail.com",
-			"homepage": "https://angelcruz.dev",
-			"role": "Developer"
-		}
-	],
-	"require": {},
-	"autoload": {
-		"psr-4": {
-			"Abr4xas\\Utils\\": "src/"
-		}
-	},
-	"extra": {
-		"branch-alias": {
-			"dev-master": "1.0-dev"
-		}
-	},
-	"config": {
-		"sort-packages": true
-	},
-	"minimum-stability": "dev",
-	"prefer-stable": true
+    "name": "abr4xas/utils",
+    "description": "Personal Package",
+    "keywords": [
+        "abr4xas",
+        "utils"
+    ],
+    "homepage": "https://github.com/abr4xas/utils",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "angel cruz",
+            "email": "angel@tepuilabs.dev",
+            "homepage": "https://spatie.be",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.17",
+        "phpunit/phpunit": "^9.3",
+        "vimeo/psalm": "^3.11"
+    },
+    "autoload": {
+        "psr-4": {
+            "Abr4xas\\Utils\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Abr4xas\\Utils\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "psalm": "vendor/bin/psalm",
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage",
+		"format": "vendor/bin/php-cs-fixer fix --allow-risky=yes",
+		"all" : "composer psalm && composer test && composer test-coverage && composer format"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "funding": [
+        {
+            "type": "patreon",
+            "url": "https://www.patreon.com/angelcruzdev"
+        },
+        {
+            "type": "other",
+            "url": "https://ko-fi.com/angelcruzdev"
+        }
+    ]
 }
